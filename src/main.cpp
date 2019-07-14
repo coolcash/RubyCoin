@@ -2022,6 +2022,10 @@ bool CBlock::AcceptBlock()
     if (mapBlockIndex.count(hash))
         return error("AcceptBlock() : block already in mapBlockIndex");
 
+    if (hash == Params().HashRollbackBlock()) {
+        return error("AcceptBlock() : reject rollback block");
+    }
+
     // Get prev block index
     map<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(hashPrevBlock);
     if (mi == mapBlockIndex.end())
