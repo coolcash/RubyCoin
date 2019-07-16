@@ -19,7 +19,7 @@
 using namespace std;
 
 // Settings
-int64_t nStakeCombineThreshold = 500 * COIN;
+int64_t nStakeCombineThreshold = 100 * COIN;
 int64_t nStakeSplitThreshold = 2 * nStakeCombineThreshold;
 int64_t nTransactionFee = MIN_TX_FEE;
 int64_t nReserveBalance = 0;
