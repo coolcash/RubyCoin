@@ -54,6 +54,7 @@ public:
     };
 
     const uint256& HashGenesisBlock() const { return hashGenesisBlock; }
+    const uint256& HashRollbackBlock() const { return hashRollbackBlock; }
     const MessageStartChars& MessageStart() const { return pchMessageStart; }
     const vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
     int GetDefaultPort() const { return nDefaultPort; }
@@ -72,6 +73,7 @@ protected:
     CChainParams() {};
 
     uint256 hashGenesisBlock;
+    uint256 hashRollbackBlock;
     MessageStartChars pchMessageStart;
     // Raw pub key bytes for the broadcast alert signing key.
     vector<unsigned char> vAlertPubKey;
